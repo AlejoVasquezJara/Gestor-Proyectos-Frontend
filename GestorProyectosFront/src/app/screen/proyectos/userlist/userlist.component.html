@@ -1,0 +1,48 @@
+<nav>
+  <ul>
+    <li><a (click)="sendSearch()">Proyectos</a></li>
+  </ul>
+</nav>
+<div class="form-group">
+  <label for="input1">DESCRIPCION:</label>
+  <input type="text" id="input1">
+
+  <label for="input2">NOMBRE PROYECTO:</label>
+  <input type="text" id="input2">
+</div>
+<section>
+
+  <table class="mat-elevation-z8" mat-table [dataSource]="dataSource" aria-describedby="table-personas">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Nombre">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td style="width: 450px" mat-cell *matCellDef="let element"> {{element.dsnombre}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef>ROL</th>
+      <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Eliminar">
+      <th scope="col"  mat-header-cell *matHeaderCellDef>Eliminar</th>
+      <td id="eliminar" mat-cell *matCellDef="let element">
+        <div >
+          <div class="example-button-container">
+            <button class="DeleteProyectos" type="button" (click)="Delete(element)"  mat-icon-button matTooltip="Borrar un integrante"
+                    color="warn" >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+  </table>
+</section>
+

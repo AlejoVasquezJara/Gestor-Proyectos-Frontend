@@ -1,0 +1,30 @@
+<h1>
+  AGREGAR PARTICIPANTE AL PROYECTO
+</h1>
+<section class="section_form">
+  <form [formGroup]="form">
+
+    <mat-form-field class="inp" appearance="outline">
+      <mat-label>PERSONA</mat-label>
+      <mat-select formControlName="idpersona" required>
+        <mat-option [value]="personas.idunicpersona" *ngFor="let personas of personas">
+          {{ personas.dsnombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>ROLE</mat-label>
+      <mat-select formControlName="role" required>
+        <mat-option [value]="item.data" *ngFor="let item of roles">
+          {{ item.tipo }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <button mat-stroked-button id="save" (click)="save()" title="Guardar">
+      <mat-icon>save</mat-icon>
+    </button>
+  </form>
+</section>

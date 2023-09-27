@@ -1,0 +1,52 @@
+<body>
+  <mat-card>
+    <mat-card-actions>
+      <form
+        class="example-container"
+        [formGroup]="FormPersonasandUsers" >
+        <h2>Registro</h2>
+
+        <mat-form-field  >
+          <mat-label>Nombre completo</mat-label>
+          <input matInput type="text"  formControlName="dtdsnombre">
+        </mat-form-field>
+
+
+        <mat-form-field  >
+          <mat-label>Documento de identidad</mat-label>
+          <input matInput type="text"  formControlName="dtcedula">
+        </mat-form-field>
+
+        <mat-form-field  >
+          <mat-label>Correo Electronico</mat-label>
+          <input matInput type="email"  formControlName="dtcorreo">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dtfenacimiento">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field  >
+          <mat-label>Nombre de Usuario</mat-label>
+          <input matInput type="text"  formControlName="dtuser">
+        </mat-form-field>
+
+
+        <mat-form-field >
+          <mat-label>Contraseña</mat-label>
+          <input  matInput type="password" formControlName="dtpassword">
+        </mat-form-field>
+
+        <button type="submit" (click)="savedata()" [disabled]="FormPersonasandUsers.invalid" >REGISTRASE</button>
+        <button (click)="close()" >Cerrar</button>
+
+      </form>
+    </mat-card-actions>
+  </mat-card>
+</body>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    .section_form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .mat-card {
+      width: 400px;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .mat-card-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1877c3;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <section class="section_form">
+    <div class="mat-card">
+      <div class="mat-card-actions">
+        <form [formGroup]="form">
+          <input type="text" placeholder="NOMBRE PROYECTO" formControlName="dsproyecto">
+          <input type="text" placeholder="DESCRIPCION" formControlName="descripcion">
+          <button mat-stroked-button id="save" (click)="save()" title="Guardar" [disabled]="form.invalid">
+            <mat-icon>save</mat-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
